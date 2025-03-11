@@ -151,7 +151,8 @@ public class BiometricActivity extends AppCompatActivity {
     // TODO: remove after fix https://issuetracker.google.com/issues/142740104
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == REQUEST_CODE_CONFIRM_DEVICE_CREDENTIALS) {
+      super.onActivityResult(requestCode, resultCode, data);
+      if (requestCode == REQUEST_CODE_CONFIRM_DEVICE_CREDENTIALS) {
             if (resultCode == Activity.RESULT_OK) {
                 finishWithSuccess();
             } else {
