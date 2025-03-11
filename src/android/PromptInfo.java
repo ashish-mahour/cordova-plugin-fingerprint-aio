@@ -109,7 +109,9 @@ class PromptInfo {
             bundle.putBoolean(DISABLE_BACKUP, this.disableBackup);
             bundle.putBoolean(CONFIRMATION_REQUIRED, this.confirmationRequired);
             bundle.putBoolean(INVALIDATE_ON_ENROLLMENT, this.invalidateOnEnrollment);
-            bundle.putInt(BIOMETRIC_ACTIVITY_TYPE, this.type.getValue());
+            if (this.type != null) {
+              bundle.putInt(BIOMETRIC_ACTIVITY_TYPE, this.type.getValue());
+            }
             promptInfo.bundle = bundle;
 
             return promptInfo;
